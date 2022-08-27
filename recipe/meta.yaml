@@ -22,10 +22,8 @@ requirements:
 test:
   commands:
     - git clone --depth=1 "https://github.com/google/go-licenses"
-    - cd go-licenses
-    - git config --add safe.directory %cd%  # [win]
-    - go-licenses csv . | findstr "Apache-2.0 BSD-.-Clause MIT"             # [win]
-    - go-licenses csv . | grep 'Apache-2\.0\|BSD-.-Clause\|MIT\|Unlicense'  # [not win]
+    - cd go-licenses && git config --add safe.directory %cd% && go-licenses csv . | findstr "Apache-2.0 BSD-.-Clause MIT"  # [win]
+    - cd go-licenses && go-licenses csv . | grep 'Apache-2\.0\|BSD-.-Clause\|MIT\|Unlicense'  # [not win]
   requires:
     - git
     - go
