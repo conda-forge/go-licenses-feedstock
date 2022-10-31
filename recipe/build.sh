@@ -1,9 +1,6 @@
 #!/bin/bash
 
-export GOBIN
-GOBIN=$(go env GOBIN)
-
-go install -v github.com/google/go-licenses
+go build -v -o $PREFIX/bin/go-licenses
 
 go-licenses save . --save_path=./license-files
 # TODO: remove if not actually needed, see #6
