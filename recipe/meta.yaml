@@ -1,4 +1,4 @@
-{% set version = "1.6.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: go-licenses
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/google/go-licenses/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 70c1ceb7c342ceb79b63a76caafb13ea3796a51715c742a482eb9d85277311e7
+    sha256: b1dea2846510f7ce464902f7dacf13e896093ac2cbf6a7794bdde9457e5ff977
 
 build:
   number: 0
