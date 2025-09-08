@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 2.0.0
+  version: "2.0.1"
 
 package:
   name: go-licenses
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/google/go-licenses/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: b1dea2846510f7ce464902f7dacf13e896093ac2cbf6a7794bdde9457e5ff977
+  sha256: 04a875604c0cc62217fea3d283c243a2e4298142cdfeafb088b9e486daabded3
 
 build:
   number: 0
@@ -34,9 +34,7 @@ tests:
       - cd go-licenses
       - if: win
         then: go-licenses csv . | findstr "Apache-2.0 BSD-.-Clause MIT"
-      - if: not win
-        then: go-licenses csv . | grep 'Apache-2\.0\|BSD-.-Clause\|MIT\|Unlicense'
-
+        else: go-licenses csv . | grep 'Apache-2\.0\|BSD-.-Clause\|MIT\|Unlicense'
 about:
   license: Apache-2.0
   license_file:
