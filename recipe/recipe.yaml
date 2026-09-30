@@ -13,7 +13,7 @@ source:
   sha256: 04a875604c0cc62217fea3d283c243a2e4298142cdfeafb088b9e486daabded3
 
 build:
-  number: 0
+  number: 1
   script:
     file: build-go-licenses
 
@@ -25,6 +25,10 @@ requirements:
     - go
 
 tests:
+  - package_contents:
+      strict: true
+      bin:
+        - go-licenses
   - requirements:
       run:
         - git
